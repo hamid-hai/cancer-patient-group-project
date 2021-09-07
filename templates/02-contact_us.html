@@ -1,0 +1,103 @@
+<!-- These references extend the skeleton of the homepage-->
+{% extends "chc_template.html" %}
+<!-- Style sheet reference -->
+<!--Script Reference-->
+
+{%block title %}
+
+<title> Cancer Patient Pathways - Contact </title>
+<!-- <div class="sub_text"> <h2>Generic Questions Only</h2> </div> -->
+{%endblock %}
+
+
+{%block content%}
+<div class="form_design">
+
+    <form method="post" name="myForm">
+    <label>First name:</label><br>
+    <input id="firstName" type="text" name="firstName" required>
+    <br>
+    <label>Last name:</label><br>
+    <input id="lastName" type="text" name="lastName" required>
+    <br>
+    <label>Email:</label><br>
+    <input id="email" type="email" name="email" required>
+    <br>
+    <label>Query:</label><br>
+    <textarea id="query" rows="5" cols="50" name="query" placeholder="Type your query here..." required></textarea>
+    <br>
+    <br>
+    <input id = "submit" type="submit" name ='form_submission_guest'>
+    </form>
+    <span id='txt'>{{msg}}</span>
+    <p> We aim to respond to queries as soon as possible however during peak times responses may take longer to recieve.
+        <br><br> Thank You </p>
+</div>
+
+
+
+<script>
+    // function datatransfer() {
+    //     var firstName = document.forms["myForm"]["firstName"].value;
+    //     var surname = document.forms["myForm"]["lastName"].value;
+    //     var email = document.forms["myForm"]["email"].value;
+    //     var query = document.forms["myForm"]["query"].value;
+    //     params = 'firstName=' + firstName + '&lastName=' + lastName + '&email=' + email + '&query=' + query;
+    //     var xhttp = new XMLHttpRequest();
+    //     xhttp.open("POST", '/contact_us', true); // true is asynchronous
+    //     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    //     xhttp.onload = function () {
+    //         if (xhttp.readyState === 4 && xhttp.status === 200) {
+    //             console.log(xhttp.responseText);
+    //             document.getElementById("txt").innerHTML = xhttp.responseText;
+    //         } else {
+    //             console.error(xhttp.statusText);
+    //         }
+    //     };
+    //     xhttp.send(params);
+    //     return false;
+    // }
+
+</script>
+
+{%endblock%}
+
+<!-- Form code, need to figure out how to submit it, contains validation file  -->
+<!-- <form onsubmit="return validate()" name="myForm">
+<label for="name">First name:</label><br>
+<input id="name" type="text" name="firstname">
+</br>
+
+<label>Last name:</label><br>
+<input id="lname" type="text" name="lastname">
+</br>
+
+<label>Telephone number:</label><br>
+<input id="number" type="text" name="telephonenumber">
+</br>
+
+<label for="comments">Comments:</label><br>
+<textarea id="comments" rows="5" cols="50" name="text"> Type your query here</textarea>
+</br>
+
+<br>
+<button id="sub_but" type="submit">Submit</button>
+</br> -->
+
+<!-- Uneeded code -->
+<!--
+<form action="/action_page.php" onsubmit="test()"name="myForm"></form>
+    <label for="name">First name:</label><br>
+    <input id="name" type="text" name="firstname">
+    </br>
+    <label>Last name:</label><br>
+    <input id="lname" type="text" name="lastname">
+    </br>
+    <label for="Query" onclick="test()">Query:</label><br>
+    <textarea id="query" rows="5" cols="50" name="text" placeholder = "Type your query here..."></textarea>
+    </br>
+    <br>
+    <input type="submit" value="Submit">
+    <!-- <button id="sub_but" type="submit" >Submit</button> -->
+    <!-- </br> -->
+<!-- </form> -->

@@ -1,0 +1,45 @@
+{% extends "chc_admin_template.html" %}
+
+{% block title %}<title>Cancer Patient Pathways - Home</title> {% endblock %}
+
+{% block content  %}
+
+<main>
+
+  <h1 class = "admin_head">Administration homepage</h1>
+  <h3 class = "admin_head">From this space you can do the following using the tabs above:</h3>
+
+  <!-- Additional navigation functionality created. -->
+
+  <section class = "admin_flex_container">
+    <article class = "element_1"><a href = "/section" class = "admin_link">
+      <h2 class = "admin_head">Find Account</h2>
+      <p>This page will let you search for accounts on our database depending on volunteer ID numbers. Messages can also be deleted from this section once query has been actioned. </p>
+      </a>
+    </article>
+
+    <article class = "element_2"><a href = "/section" class = "admin_link">
+      <h2 class = "admin_head">List All Accounts</h2>
+      <p>All accounts will be shown on this page, allowing you to check aggregated data and explore trends between users of the site. Account deletion stored here.</p>
+      </a>
+    </article>
+
+    <article class = "element_3"><a href = "/section" class = "admin_link">
+      <h2 class = "admin_head">All Messages</h2>
+      <p>Messages for all users are stored here so you can action where necessary. Messages can also be deleted from this section once query has been actioned. </p>
+      </a>
+    </article>
+
+    <article class = "element_4"><a href = "/section" class = "admin_link">
+      <h2 class = "admin_head">Decoration</h2>
+      <p>This link allows you to contact users yourself if a query has not been raised but you wish to speak to a user.</p>
+      </a>
+    </article>
+  </section>
+
+  <section class = 'admin_logout'>
+    <a href = '/logout' class = logout_link><p>Click Here to logout</p></a>
+  </section>
+</main>
+
+{% endblock %}

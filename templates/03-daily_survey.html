@@ -1,0 +1,113 @@
+{% extends "chc_user_template.html" %}
+
+{%block title %}
+<title> {{username}}'s Survey </title>
+{%endblock %}
+
+{%block content%}
+<form method="post" name="mysurvey">
+
+<table style="width:100%">
+
+      <tr>
+        <div class="flex-container-home">
+          <div class="homepage_body">
+
+          <div style="flex-grow: 4">
+            <h3> The following is a survey which enables us to understand how your
+                    interactions with the NHS have been going so far. </h3>
+
+</div>
+
+                    <h4 class=<strong>Please answer these questions effectively and honestly!</strong>
+                      <br><br>
+                      <label for="completion date"> Please enter the day you are filling in this survey:</label>
+                      <br>
+                      <input type="Date" name="completion date" required>
+                      <br>
+                      <h4 class = <strong> Did you undertake any activities relating to the following this week? </strong>
+                        <br>
+                        </div>
+                        </div>
+                        </div>
+
+                            <th style = "width:20%">Health </th>
+                            <th style = "width:20%">SocialCare </th>
+                            <th style="width:20%"> LocalAuthority </th>
+                            <th style="width:20%"> ThirdSector </th>
+                            <th style="width:20%"> OwnActivities </th>
+      </tr>
+      <tr>
+
+      <td> <input type="checkbox" name="Health"> </td>
+       <td> <input type="checkbox" name="SocialCare"> </td>
+        <td> <input type="checkbox" name="LocalAuthority"> </td>
+         <td> <input type="checkbox" name="ThirdSector"> </td>
+          <td> <input type="checkbox" name="OwnActivities"> </td>
+      </tr>
+
+
+    </table>
+
+    <div style="flex-grow: 3">
+
+    <h4> Finally to end this survey off for today, below, simply summarise your mood for this week! </h4>
+   <br> <br>
+
+
+        <div class="row">
+          <div class="column">
+
+
+
+        <label>
+          <input type="radio" name="Veryhappy" value="veryhappy" >
+          <img src="static/assets/Very_Good_Smiley_Face.png" width="65%">
+        </label>
+        <br> <br>
+</div>
+<div class="column">
+
+       <label>
+           <input type="radio" name="Happy" value="happy" >
+       <img src="static/assets/Good_Smiley_Face.jpeg"  height="75%", width="55%"/>
+       </label>
+       </div>
+
+       <br> <br>
+
+<div class="column">
+       <label>
+           <input type="radio" name="Ok" value="ok" >
+         <img src="static/assets/Yellow_ok_face.jpeg", width="65%" alt="okmood" />
+       </label>
+       <br><br>
+</div>
+<div class="column">
+       <label>
+           <input type="radio" name="Upset" value="upset" >
+        <img src="static/assets/Orange_upset_Face.jpeg", width="75%"  alt="badmood">
+      </label>
+      </div>
+      <br> <br>
+<div class="column">
+  <label>
+    <input type="radio" name="angry" value="angry">
+    <img src="static/assets/Red_Angry_Face.jpeg" width="55%">
+    </label>
+</div>
+</div>
+
+</form>
+<div class="form_design">
+
+<button class = "survey_button" name = 'survey' type = "submit" align="center"> Submit </button>
+
+      <br> <br>
+
+
+  <a href ="static/assets/Client_Survey.pdf">
+   <b> Click here for a downloadable version of this survey. <b>
+</div>
+
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends "chc_admin_template.html" %}
+
+{%block title %}<title> {{username}}'s section </title>{%endblock %}
+
+{% block link %}
+    <link rel = "stylesheet" type = "text/css"href = "{{ url_for('static', filename='style-graph.css') }}" />
+
+{% endblock %}
+
+{%block content%}
+  <link rel = "stylesheet" type = "text/css"href = "{{ url_for('static', filename='style-main.css') }}" />
+
+<!-- Form that stores all user accounts from database. Includes post method for deleting user accounts from the database -->
+<form method = "post">
+  <table>
+     <thead>
+        <th>User ID</th>
+        <th>Email Address</th>
+        <th>Name</th>
+        <th>Access</th>
+        <th></th>
+     </thead>
+
+     {% for row in data %}
+
+        <tr>
+          <td>{{row[0]}}</td>
+          <td>{{row[1]}}</td>
+          <td>{{row[2]}}</td>
+          <td>{{row[3]}}</td>
+            <td class = "delete_button_td">
+              <!-- <input type = 'hidden' name = "user_id" value = '{{row[0]}}'> -->
+              <button onclick = "return deleteUser({{ row[0] }})">&nbsp; Delete Account &nbsp; </button>
+            </td>
+
+        </tr>
+     {% endfor %}
+  </table>
+</form>
+
+<!-- Section contains all graphical images - data pulled from admin-graph JavaScript file. -->
+<section class="aggregate_container">
+
+  <div class = 'fullsize_box'>
+    <h1 class = "data_header">Project experiences</h1>
+    <canvas id="line_graph" class = "data_line" width="800" height="450"></canvas>
+  </div>
+
+  <div class = 'fullsize_box'>
+    <h1 class = "data_header">Percentage of user Interactions</h1>
+    <canvas id="bar_chart" class = "data_line" width="800" height="450"></canvas>
+  </div>
+
+
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-trendline@0.1.3/src/chartjs-plugin-trendline.min.js"></script>
+
+<script src = "../static/js-admin-graphs.js"></script>
+
+<!-- Pulls all graphical data from server into the HTML & marks as safe so admin-graph can safely iterate & manipulate the data. -->
+<script>
+  var linegraph_data = {{ graph_data|safe }}
+</script>
+
+{% endblock %}
